@@ -15,7 +15,7 @@ mvn package -DskipTests=true
 Default value: http://127.0.0.1:8761/eureka/
 Defining all available Eureka Instances.
 #### CONFIG_LOCATION
-Default value: file:////config
+Default value: file:////config (for Windows: SET CONFIG_LOCATION=file:///c:\config)
 Defining the folder which all application.yml are stored.
 
 ### Windows
