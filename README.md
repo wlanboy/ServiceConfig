@@ -9,7 +9,7 @@ At least: Java 8 and Maven 3.5
 ## Build Service Config
 mvn package -DskipTests=true
 
-## Run Service Registry
+## Run Service Config
 ### Environment variables
 #### EUREKA_ZONE 
 Default value: http://127.0.0.1:8761/eureka/
