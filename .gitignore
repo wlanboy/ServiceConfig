@@ -13,3 +13,4 @@ buildNumber.properties
 .settings
 .vscode/settings.json
 configuration.log
+.sts4-cache/classpath-data.json
