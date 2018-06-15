@@ -28,4 +28,4 @@ java -jar target\ServiceConfig-0.0.1-SNAPSHOT.jar
 docker build -t serviceconfig:latest . --build-arg JAR_FILE=./target/ServiceConfig-0.0.1-SNAPSHOT.jar
 
 ## Docker run
-docker run --name serviceconfig -d -p 8888:8888 --link serviceregistry:serviceregistry -v ~/config:/config -v /tmp:/tmp -e EUREKA_ZONE=$EUREKA_ZONE serviceconfig:latest
+docker run --name serviceconfig -d -p 8888:8888 --link serviceregistry:serviceregistry -v ~/config:/config -v /tmp:/tmp -e EUREKA_ZONE=http://serviceregistry:8761/eureka/ serviceconfig:latest
