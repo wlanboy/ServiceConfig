@@ -7,7 +7,7 @@ spring:
     config:
       server:
         native:
-          searchLocations: ${CONFIG_LOCATION:file:////config }
+          searchLocations: ${CONFIGLOCATION:file:////config }
     
 server:
   port: ${PORT:8888}
@@ -17,4 +17,6 @@ eureka:
     registerWithEureka: true
     fetchRegistry: false
     serviceUrl:
-      defaultZone: ${EUREKA_ZONE:http://127.0.0.1:8761/eureka/}    
+      defaultZone: ${EUREKAZONE:http://127.0.0.1:8761/eureka/}
+  instance:
+      hostname: ${EUREKAHOST}
