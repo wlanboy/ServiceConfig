@@ -12,7 +12,7 @@
       <outputDirectory></outputDirectory>
       <includes>
         <include>manifest.json</include>
-        <include>employee.yaml</include>
+        <include>application.yaml</include>
       </includes>
     </fileSet>
     <fileSet>
