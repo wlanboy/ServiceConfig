@@ -20,3 +20,5 @@ eureka:
       defaultZone: ${EUREKAZONE:http://127.0.0.1:8761/eureka/}
   instance:
       hostname: ${EUREKAHOST}
+      secure-port-enabled: true
+      secure-port: ${SECUREPORT}
