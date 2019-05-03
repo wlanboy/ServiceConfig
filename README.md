@@ -29,4 +29,4 @@ docker build -t serviceconfig:latest . --build-arg JAR_FILE=./target/ServiceConf
 
 ## Docker run
 export DOCKERHOST=192.168.0.100
-docker run --name serviceconfig -m 256M -d -p 8888:8888 -v ~/config:/config -v /tmp:/tmp -e EUREKA_ZONE=http://$DOCKERHOST:8761/eureka/ serviceconfig:latest
+docker run --name serviceconfig -m 256M -d -p 8888:8888 -v /tmp:/tmp -v ~/config:/config -e DOCKERHOST=$DOCKERHOST -e EUREKA_ZONE=http://$DOCKERHOST:8761/eureka/ serviceconfig:latest
