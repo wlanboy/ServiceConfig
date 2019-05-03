@@ -19,13 +19,14 @@ Default value: file:////config (for Windows: SET CONFIG_LOCATION=file:///c:\conf
 Defining the folder which all application.yml are stored.
 
 ### Windows
-java -jar target\ServiceConfig-0.0.1-SNAPSHOT.jar
+java -jar target\ServiceConfig-0.1.1-SNAPSHOT.jar
 
 ### Linux (service enabled)
-./target/ServiceConfig-0.0.1-SNAPSHOT.jar start
+./target/ServiceConfig-0.1.1-SNAPSHOT.jar start
 
 ## Docker build
-docker build -t serviceconfig:latest . --build-arg JAR_FILE=./target/ServiceConfig-0.0.1-SNAPSHOT.jar
+docker build -t serviceconfig:latest . --build-arg JAR_FILE=./target/ServiceConfig-0.1.1-SNAPSHOT.jar
 
 ## Docker run
-docker run --name serviceconfig -d -p 8888:8888 --link serviceregistry:serviceregistry -v ~/config:/config -v /tmp:/tmp -e EUREKA_ZONE=http://serviceregistry:8761/eureka/ serviceconfig:latest
+export DOCKERHOST=192.168.0.100
+docker run --name serviceconfig -d -p 8888:8888 -v ~/config:/config -v /tmp:/tmp -e EUREKA_ZONE=http://$DOCKERHOST:8761/eureka/ serviceconfig:latest
