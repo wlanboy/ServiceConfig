@@ -12,9 +12,3 @@ spring:
 server:
   port: ${PORT:8888}
  
-eureka:
-  client:
-    registerWithEureka: true
-    fetchRegistry: false
-    serviceUrl:
-      defaultZone: ${EUREKA_ZONE:http://127.0.0.1:8761/eureka/}    
