@@ -19,13 +19,13 @@ Default value: file:////config (for Windows: SET CONFIG_LOCATION=file:///c:\conf
 Defining the folder which all application.yml are stored.
 
 ### Windows
-java -jar target\ServiceConfig-0.1.1-SNAPSHOT.jar
+java -jar target\serviceconfig-0.1.1-SNAPSHOT.jar
 
 ### Linux (service enabled)
-./target/ServiceConfig-0.1.1-SNAPSHOT.jar start
+./target/serviceconfig-0.1.1-SNAPSHOT.jar start
 
 ## Docker build
-docker build -t serviceconfig:latest . --build-arg JAR_FILE=./target/ServiceConfig-0.1.1-SNAPSHOT.jar
+docker build -t serviceconfig:latest . --build-arg JAR_FILE=./target/serviceconfig-0.1.1-SNAPSHOT.jar
 
 ## Docker run
 export DOCKERHOST=192.168.0.100
