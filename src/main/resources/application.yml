@@ -1,14 +1,11 @@
 spring:
   application:
     name: serviceconfig
-  profiles:
-    active: native
   cloud:
     config:
       server:
-        native:
-          searchLocations: ${CONFIG_LOCATION:file:////config }
-    
+        git:
+           uri: https://github.com/wlanboy/cloudconfig.git
 server:
   port: ${PORT:8888}
  
