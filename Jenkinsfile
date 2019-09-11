@@ -1,5 +1,14 @@
 pipeline {
   agent any
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '1'))
+  }
+  parameters {
+      booleanParam(defaultValue: false, description: 'Publish to DockerHub', name: 'PUBLISHIMAGE')
+  }  
+  environment {
+    LOGSTASH = 'nuc:5044'
+  }
   stages {
     stage('Git') {
       steps {
@@ -12,6 +21,7 @@ pipeline {
       }
     }
     stage('Publish') {
+      when { expression { params.PUBLISHIMAGE == true } }
       steps {
         withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
           sh 'docker push wlanboy/serviceconfig:latest'
