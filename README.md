@@ -11,8 +11,6 @@ mvn package -DskipTests=true
 
 ## Run Service Config
 ### Environment variables
-#### EUREKA_ZONE 
-export DOCKERHOST=192.168.0.100
 
 #### CONFIG_LOCATION
 Default value: https://github.com/wlanboy/cloudconfig
