@@ -12,6 +12,9 @@ mvn package -DskipTests=true
 ## Run Service Config
 ### Environment variables
 
+### KeyStores
+keytool -genkey -alias serviceconfig -keystore /serviceconfig/serviceconfig.jks
+
 #### CONFIG_LOCATION
 Default value: https://github.com/wlanboy/cloudconfig
 Defining the folder which all application.yml are stored.
@@ -26,4 +29,4 @@ java -jar target\serviceconfig-0.1.1-SNAPSHOT.jar
 docker build -t serviceconfig:latest . --build-arg JAR_FILE=./target/serviceconfig-0.1.1-SNAPSHOT.jar
 
 ## Docker run
-docker run --name serviceconfig -m 256M -d -p 8888:8888 -v /tmp:/tmp serviceconfig:latest
+docker run --name serviceconfig -m 256M -d -p 8888:8888 -v /tmp:/tmp -v /serviceconfig:/serviceconfig wlanboy/serviceconfig:latest
