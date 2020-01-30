@@ -19,7 +19,8 @@ keytool -genkey -alias serviceconfig -keystore /serviceconfig/serviceconfig.jks
 
 #### CONFIG_LOCATION
 Default value: https://github.com/wlanboy/cloudconfig
-Defining the folder which all application.yml are stored.
+
+Defining the git repro which all yml files are stored.
 
 ### Windows
 java -jar target\serviceconfig-0.1.1-SNAPSHOT.jar
