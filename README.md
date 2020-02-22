@@ -4,7 +4,7 @@ Spring Framework based Service Configuration
 Based on https://projects.spring.io/spring-cloud/ and https://github.com/spring-cloud-samples/configserver.
 
 ## Dependencies
-At least: Java 8 and Maven 3.5
+At least: Java 11 and Maven 3.6
 
 ## Build Service Config
 mvn package -DskipTests=true
