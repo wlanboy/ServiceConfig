@@ -1,3 +1,5 @@
+![Java CI with Maven](https://github.com/wlanboy/ServiceConfig/workflows/Java%20CI%20with%20Maven/badge.svg?branch=master)
+
 # ServiceConfig
 Spring Framework based Service Configuration
 
