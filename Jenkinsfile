@@ -23,6 +23,11 @@ pipeline {
         sh 'mvn clean package -DskipTests'
       }
     }
+    stage('Container') {
+      steps {
+        sh 'docker build -t serviceconfig:latest . --build-arg JAR_FILE=./target/serviceconfig-0.1.1-SNAPSHOT.jar'
+      }
+    }
     stage('Publish') {
       when { expression { params.PUBLISHIMAGE == true } }
       steps {
