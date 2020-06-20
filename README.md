@@ -37,5 +37,8 @@ docker build -t serviceconfig:latest . --build-arg JAR_FILE=./target/serviceconf
 - docker tag serviceconfig:latest docker.pkg.github.com/wlanboy/serviceconfig/serviceconfig:latest
 - docker push docker.pkg.github.com/wlanboy/serviceconfig/serviceconfig:latest
 
+## Docker Registry repro
+- https://github.com/wlanboy/ServiceConfig/packages/278489
+
 ## Docker run
 - docker run --name serviceconfig -m 256M -d -p 8888:8888 -e KEYSTORE_PASSWORD=$KEYSTORE_PASSWORD -e KEYSTORE_SECRET=$KEYSTORE_SECRET -v /tmp:/tmp -v /serviceconfig:/serviceconfig --restart unless-stopped wlanboy/serviceconfig:latest
