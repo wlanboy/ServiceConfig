@@ -33,5 +33,9 @@ java -jar target\serviceconfig-0.1.1-SNAPSHOT.jar
 ## Docker build
 docker build -t serviceconfig:latest . --build-arg JAR_FILE=./target/serviceconfig-0.1.1-SNAPSHOT.jar
 
+## Docker publish to github registry
+- docker tag serviceconfig:latest docker.pkg.github.com/wlanboy/serviceconfig/serviceconfig:latest
+- docker push docker.pkg.github.com/wlanboy/serviceconfig/serviceconfig:latest
+
 ## Docker run
-docker run --name serviceconfig -m 256M -d -p 8888:8888 -e KEYSTORE_PASSWORD=$KEYSTORE_PASSWORD -e KEYSTORE_SECRET=$KEYSTORE_SECRET -v /tmp:/tmp -v /serviceconfig:/serviceconfig --restart unless-stopped wlanboy/serviceconfig:latest
+- docker run --name serviceconfig -m 256M -d -p 8888:8888 -e KEYSTORE_PASSWORD=$KEYSTORE_PASSWORD -e KEYSTORE_SECRET=$KEYSTORE_SECRET -v /tmp:/tmp -v /serviceconfig:/serviceconfig --restart unless-stopped wlanboy/serviceconfig:latest
