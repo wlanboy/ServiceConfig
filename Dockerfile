@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11:alpine-jre
+FROM adoptopenjdk/openjdk11:debianslim-jre
 VOLUME /config
 VOLUME /tmp
 ARG JAR_FILE
