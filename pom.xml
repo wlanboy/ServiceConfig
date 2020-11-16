@@ -24,9 +24,9 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>11</java.version>
 		<!--https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies-->
-		<spring-cloud.version>Hoxton.SR8</spring-cloud.version>
-		<dockerfile.version>1.4.10</dockerfile.version>
-        <docker.image.prefix>wlanboy</docker.image.prefix>		
+		<spring-cloud.version>Hoxton.SR9</spring-cloud.version>
+		<!--https://mvnrepository.com/artifact/net.logstash.logback/logstash-logback-encoder-->
+		<logstash-logback-encoder.version>6.4</logstash-logback-encoder.version>
 	</properties>
 
 	<dependencyManagement>
@@ -57,7 +57,7 @@
 		<dependency>
 			<groupId>net.logstash.logback</groupId>
 			<artifactId>logstash-logback-encoder</artifactId>
-			<version>6.3</version>
+			<version>${logstash-logback-encoder.version}</version>
 		</dependency>
 
 		<dependency>
@@ -104,34 +104,6 @@
 				</execution>
 				</executions>			
 			</plugin>
-
-			<!--<plugin>
-				<groupId>com.spotify</groupId>
-				<artifactId>dockerfile-maven-plugin</artifactId>
-				<version>${dockerfile.version}</version>
-				<executions>
-				<execution>
-					<id>default</id>
-					<phase>package</phase>
-					<goals>
-					<goal>build</goal>
-					</goals>
-				</execution>
-				</executions>
-				<configuration>
-				<repository>${docker.image.prefix}/${project.artifactId}</repository>
-				<buildArgs>
-					<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
-				</buildArgs>
-				</configuration>
-				<dependencies>
-				<dependency>
-					<groupId>javax.activation</groupId>
-					<artifactId>javax.activation-api</artifactId>
-					<version>1.2.0</version>
-				</dependency>
-				</dependencies>
-			</plugin>-->
 		</plugins>
 	</build>
 
