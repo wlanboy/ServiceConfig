@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: serviceconfig
+  name: serviceconfig
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: serviceconfig
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: serviceconfig
+    spec:
+      containers:
+      - image: wlanboy/serviceconfig
+        name: serviceconfig
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: serviceconfig
+  name: serviceconfig
+spec:
+  ports:
+  - name: 8888-8888
+    port: 8888
+    protocol: TCP
+    targetPort: 8888
+  selector:
+    app: serviceconfig
+  type: ClusterIP
+status:
+  loadBalancer: {}
