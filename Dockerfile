@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11:debianslim-jre
+FROM eclipse-temurin:17-jre-alpine
 VOLUME /config
 VOLUME /tmp
 ARG JAR_FILE
