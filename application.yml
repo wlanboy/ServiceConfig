@@ -4,4 +4,4 @@ spring:
       server:
         git:
            uri: https://github.com/wlanboy/cloudconfig.git
-           default-label: master
+           default-label: main
