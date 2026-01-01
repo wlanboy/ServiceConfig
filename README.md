@@ -6,18 +6,31 @@ Spring Framework based Service Configuration
 Based on https://projects.spring.io/spring-cloud/ and https://github.com/spring-cloud-samples/configserver.
 
 ## Dependencies
-At least: Java 11 and Maven 3.6
+At least: Java 21 and Maven 3.6
 
 ## Build Service Config
 mvn package -DskipTests=true
 
 ## Run Service Config
 ### Environment variables
-export KEYSTORE_PASSWORD=xxx
-export KEYSTORE_SECRET=xxx
+
+```bash
+export KEYSTORE_PASSWORD=keystore
+export KEYSTORE_SECRET=keystore
+```
 
 ### KeyStores
-keytool -genkey -alias serviceconfig -keystore /serviceconfig/serviceconfig.jks
+```bash
+keytool -genkeypair \
+  -alias serviceconfig \
+  -keyalg RSA \
+  -keysize 2048 \
+  -keystore ./serviceconfig.jks \
+  -storepass "$KEYSTORE_PASSWORD" \
+  -keypass "$KEYSTORE_SECRET" \
+  -validity 3650 \
+  -dname "CN=serviceconfig, OU=IT, O=YourCompany, L=YourCity, S=YourState, C=DE"
+```
 
 #### CONFIG_LOCATION
 Default value: https://github.com/wlanboy/cloudconfig
@@ -32,13 +45,6 @@ java -jar target\serviceconfig-0.1.1-SNAPSHOT.jar
 
 ## Docker build
 docker build -t serviceconfig:latest . --build-arg JAR_FILE=./target/serviceconfig-0.1.1-SNAPSHOT.jar
-
-## Docker publish to github registry
-- docker tag serviceconfig:latest docker.pkg.github.com/wlanboy/serviceconfig/serviceconfig:latest
-- docker push docker.pkg.github.com/wlanboy/serviceconfig/serviceconfig:latest
-
-## Docker Registry repro
-- https://github.com/wlanboy/ServiceConfig/packages/278489
 
 ## Docker run
 - docker run --name serviceconfig -m 256M -d -p 8888:8888 -e KEYSTORE_PASSWORD=$KEYSTORE_PASSWORD -e KEYSTORE_SECRET=$KEYSTORE_SECRET -v /tmp:/tmp -v /serviceconfig:/serviceconfig --restart unless-stopped wlanboy/serviceconfig:latest
