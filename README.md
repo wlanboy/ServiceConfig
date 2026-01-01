@@ -1,7 +1,5 @@
-![Java CI with Maven](https://github.com/wlanboy/ServiceConfig/workflows/Java%20CI%20with%20Maven/badge.svg?branch=master) ![Docker build and publish image](https://github.com/wlanboy/ServiceConfig/workflows/Docker%20build%20and%20publish%20image/badge.svg)
-
 # ServiceConfig
-Spring Framework based Service Configuration
+Spring Framework based Service Configuration Server
 
 Based on https://projects.spring.io/spring-cloud/ and https://github.com/spring-cloud-samples/configserver.
 
