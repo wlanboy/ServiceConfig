@@ -4,7 +4,7 @@ Spring Framework based Service Configuration Server
 Based on https://projects.spring.io/spring-cloud/ and https://github.com/spring-cloud-samples/configserver.
 
 ## Dependencies
-At least: Java 21 and Maven 3.6
+At least: Java 25 and Maven 3.9
 
 ## Build Service Config
 mvn package -DskipTests=true
@@ -42,7 +42,7 @@ java -jar target\serviceconfig-0.1.1-SNAPSHOT.jar
 ./target/serviceconfig-0.1.1-SNAPSHOT.jar start
 
 ## Docker build
-docker build -t serviceconfig:latest . --build-arg JAR_FILE=./target/serviceconfig-0.1.1-SNAPSHOT.jar
+docker build -t serviceconfig:latest .
 
 ## Docker run
 - docker run --name serviceconfig -m 256M -d -p 8888:8888 -e KEYSTORE_PASSWORD=$KEYSTORE_PASSWORD -e KEYSTORE_SECRET=$KEYSTORE_SECRET -v /tmp:/tmp -v /serviceconfig:/serviceconfig --restart unless-stopped wlanboy/serviceconfig:latest

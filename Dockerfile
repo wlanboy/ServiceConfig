@@ -1,8 +1,7 @@
-FROM eclipse-temurin:21-jre-alpine
+FROM eclipse-temurin:25-jre-noble
 VOLUME /config
 VOLUME /tmp
-ARG JAR_FILE
-ADD ${JAR_FILE} app.jar
+COPY target/serviceconfig-*.jar app.jar
 ADD bootstrap.properties bootstrap.properties
 ADD application.yml application.yml
 EXPOSE 8888
