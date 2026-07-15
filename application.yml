@@ -5,3 +5,8 @@ spring:
         git:
            uri: https://github.com/wlanboy/cloudconfig.git
            default-label: main
+
+management:
+  metrics:
+    enable:
+      spring.cloud.config.environment.find: false
