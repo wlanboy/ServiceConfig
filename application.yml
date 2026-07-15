@@ -9,4 +9,4 @@ spring:
 management:
   metrics:
     enable:
-      spring.cloud.config.environment.find: false
+      spring.cloud.config.environment: false
