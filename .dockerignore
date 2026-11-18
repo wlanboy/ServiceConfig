@@ -1,12 +1,6 @@
-.git
-.gitignore
-.github
-bin/
-*.md
-*.log
-.mvn/
-mvnw
-mvnw.cmd
-.idea/
-*.iml
-.DS_Store
+# Allowlist: alles ausschließen, nur die Dateien zulassen, die das Dockerfile kopiert.
+# So landen Keystores (*.jks), .env, IDE-Settings und .git nie im Build-Kontext.
+*
+!target/serviceconfig-*.jar
+!application.yml
+!bootstrap.properties
